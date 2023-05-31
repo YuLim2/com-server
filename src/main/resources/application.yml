@@ -1,0 +1,58 @@
+spring:
+  profiles:
+    active: local
+
+  jpa:
+    database: mysql
+    database-platform: org.hibernate.dialect.MySQLDialect
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQLDialect
+        format_sql: true
+
+    generate-ddl: true
+    hibernate:
+      ddl-auto: validate
+
+  datasource:
+    url: jdbc:mysql://${DB_HOST}:${DB_PORT}/${DB_NAME}
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ${DB_USERNAME}
+    password: ${DB_PASSWORD}
+---
+spring:
+  config:
+    activate:
+      on-profile: dev
+
+debug: true
+---
+spring:
+  config:
+    activate:
+      on-profile: prod
+---
+spring:
+  config:
+    activate:
+      on-profile: local
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+
+  datasource:
+    url: jdbc:mysql://localhost:3309/kingyu_com
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: kingyu
+    password: kingyu
+
+  data:
+    redis:
+      host: localhost
+      password: kingyu
+
+server:
+  port: 9099
+
+debug: true
