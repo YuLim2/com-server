@@ -39,10 +39,12 @@ public class Comment extends BaseTimeEntity {
     @Column(nullable = false)
     private Anon anon;
 
-    public Comment(String content, Long parentId, Long postId, Status status, Anon anon) {
+    public Comment(String content, Long profileId, Long parentId, Long postId, Status status, Anon anon) {
         this.content = content;
+        this.profileId = profileId;
         this.parentId = parentId;
         this.postId = postId;
+        this.status = status;
         this.anon = anon;
     }
 }

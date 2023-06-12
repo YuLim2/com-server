@@ -37,11 +37,12 @@ public class Post extends BaseTimeEntity {
     @Column(nullable = false)
     private Anon anon;
 
-    public Post(Long profileId, String title, String content, String image, Anon anon) {
-        this.ProfileId = profileId;
+    public Post(Long profileId, String title, String content, String image, Status status, Anon anon) {
+        ProfileId = profileId;
         this.title = title;
         this.content = content;
         this.image = image;
+        this.status = status;
         this.anon = anon;
     }
 }

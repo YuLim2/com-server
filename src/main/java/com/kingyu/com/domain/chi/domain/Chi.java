@@ -1,6 +1,7 @@
-package com.kingyu.com.domain.chi;
+package com.kingyu.com.domain.chi.domain;
 
 import com.kingyu.com.global.entity.BaseTimeEntity;
+import com.kingyu.com.global.type.Status;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -29,9 +30,15 @@ public class Chi extends BaseTimeEntity {
     @Column(length = 200, nullable = true)
     private String image;
 
-    public Chi(String content, Long ccokId, String image) {
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+
+    public Chi(String content, Long ccokId, Long profileId, String image, Status status) {
         this.content = content;
         this.ccokId = ccokId;
+        this.profileId = profileId;
         this.image = image;
+        this.status = status;
     }
 }

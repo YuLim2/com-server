@@ -47,13 +47,14 @@ public class Ccok extends BaseTimeEntity {
     @Column(nullable = false)
     private Anon anon;
 
-    public Ccok(String content, String toId, String fromId, String image, Integer cnt, Lock lock, Anon anon) {
+    public Ccok(String content, String toId, String fromId, String image, Integer cnt, Lock lock, Status status, Anon anon) {
         this.content = content;
         this.toId = toId;
         this.fromId = fromId;
         this.image = image;
         this.cnt = cnt;
         this.lock = lock;
+        this.status = status;
         this.anon = anon;
     }
 }

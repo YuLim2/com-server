@@ -36,10 +36,12 @@ public class User extends BaseTimeEntity {
     private Status status;
 
     @Builder
-    public User(String name, String email, String password) {
+    public User(String name, String email, String password, Integer cnt, Status status) {
         this.name = name;
         this.email = email;
         this.password = password;
+        this.cnt = cnt;
+        this.status = status;
     }
 
 }

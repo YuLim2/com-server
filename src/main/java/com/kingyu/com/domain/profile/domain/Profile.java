@@ -32,9 +32,11 @@ public class Profile extends BaseTimeEntity {
     @Column(nullable = false)
     private Status status;
 
-    public Profile(String name, String nickname, String image) {
+    public Profile(Long user_id, String name, String nickname, String image, Status status) {
+        this.user_id = user_id;
         this.name = name;
         this.nickname = nickname;
         this.image = image;
+        this.status = status;
     }
 }

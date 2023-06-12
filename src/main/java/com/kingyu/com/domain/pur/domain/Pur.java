@@ -1,6 +1,7 @@
-package com.kingyu.com.domain.pur;
+package com.kingyu.com.domain.pur.domain;
 
 import com.kingyu.com.global.entity.BaseTimeEntity;
+import com.kingyu.com.global.type.Status;
 import jakarta.persistence.*;
 import lombok.AccessLevel;
 import lombok.Getter;
@@ -23,4 +24,13 @@ public class Pur extends BaseTimeEntity {
     @Column(name = "profile_id", nullable = false)
     private Long profileId;
 
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Status status;
+
+    public Pur(Long ccokId, Long profileId, Status status) {
+        this.ccokId = ccokId;
+        this.profileId = profileId;
+        this.status = status;
+    }
 }
