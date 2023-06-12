@@ -1,6 +1,6 @@
-package com.kingyu.com.domain.ccok.domain;
+package com.kingyu.com.domain.cok.domain;
 
-import com.kingyu.com.domain.ccok.type.Lock;
+import com.kingyu.com.domain.cok.domain.type.Access;
 import com.kingyu.com.global.entity.BaseTimeEntity;
 import com.kingyu.com.global.type.Anon;
 import com.kingyu.com.global.type.Status;
@@ -10,14 +10,14 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @Entity
-@Table(name = "tbl_ccok")
+@Table(name = "tbl_cok")
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Getter
-public class Ccok extends BaseTimeEntity {
+public class Cok extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ccok_id")
+    @Column(name = "cok_id")
     private Long id;
 
     @Column(length = 300, nullable = false)
@@ -37,7 +37,7 @@ public class Ccok extends BaseTimeEntity {
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
-    private Lock lock;
+    private Access access;
 
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)
@@ -47,13 +47,13 @@ public class Ccok extends BaseTimeEntity {
     @Column(nullable = false)
     private Anon anon;
 
-    public Ccok(String content, String toId, String fromId, String image, Integer cnt, Lock lock, Status status, Anon anon) {
+    public Cok(String content, String toId, String fromId, String image, Integer cnt, Access access, Status status, Anon anon) {
         this.content = content;
         this.toId = toId;
         this.fromId = fromId;
         this.image = image;
         this.cnt = cnt;
-        this.lock = lock;
+        this.access = access;
         this.status = status;
         this.anon = anon;
     }

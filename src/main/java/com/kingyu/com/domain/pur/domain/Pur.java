@@ -18,8 +18,8 @@ public class Pur extends BaseTimeEntity {
     @Column(name = "pur_id")
     private Long id;
 
-    @Column(name = "ccok_id", nullable = false)
-    private Long ccokId;
+    @Column(name = "cok_id", nullable = false)
+    private Long cokId;
 
     @Column(name = "profile_id", nullable = false)
     private Long profileId;
@@ -28,8 +28,8 @@ public class Pur extends BaseTimeEntity {
     @Column(nullable = false)
     private Status status;
 
-    public Pur(Long ccokId, Long profileId, Status status) {
-        this.ccokId = ccokId;
+    public Pur(Long cokId, Long profileId, Status status) {
+        this.cokId = cokId;
         this.profileId = profileId;
         this.status = status;
     }

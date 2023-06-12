@@ -21,8 +21,8 @@ public class Chi extends BaseTimeEntity {
     @Column(length = 300, nullable = false)
     private String content;
 
-    @Column(name = "ccok_id", nullable = false)
-    private Long ccokId;
+    @Column(name = "cok_id", nullable = false)
+    private Long cokId;
 
     @Column(name = "profile_id", nullable = false)
     private Long profileId;
@@ -34,9 +34,9 @@ public class Chi extends BaseTimeEntity {
     @Column(nullable = false)
     private Status status;
 
-    public Chi(String content, Long ccokId, Long profileId, String image, Status status) {
+    public Chi(String content, Long cokId, Long profileId, String image, Status status) {
         this.content = content;
-        this.ccokId = ccokId;
+        this.cokId = cokId;
         this.profileId = profileId;
         this.image = image;
         this.status = status;
